@@ -2,7 +2,14 @@ from flask import Flask, request, jsonify
 from text_summary import summarizer
 
 import spacy
-nlp = spacy.load("en_core_web_sm")
+from spacy.cli import download
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+
 
 app = Flask(__name__)
 
