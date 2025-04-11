@@ -1,9 +1,6 @@
 from flask import Flask, request, jsonify
 from text_summary import summarizer
 
-import spacy.cli
-spacy.cli.download("en_core_web_sm")  # Only needed once
-
 import spacy
 nlp = spacy.load("en_core_web_sm")
 
