@@ -3,9 +3,6 @@ from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
 from heapq import nlargest
 
-# Load model once globally
-nlp = spacy.load("en_core_web_sm")
-
 def summarizer(rawdoc):
     stopwords = list(STOP_WORDS)
     doc = nlp(rawdoc)
